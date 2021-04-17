@@ -32,3 +32,5 @@ void loop()
   delay(1); //Dá um delay entre as leituras do loop
 }
 ````
+
+[Voltar ao inicio](https://github.com/MagdielCS/trabalho_STR)

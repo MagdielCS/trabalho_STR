@@ -32,3 +32,5 @@ void loop()
   delay(1000); // Aguarda 1 segundo
 }
 ````
+
+[Voltar ao inicio](https://github.com/MagdielCS/trabalho_STR)
