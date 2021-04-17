@@ -1,6 +1,6 @@
 void setup()
 {
-  pinMode(LED_BUILTIN, OUTPUT); //Inicia o pin LED_BUILTIN como saida
+  pinMode(LED_BUILTIN, OUTPUT); //Inicia o pin LED_BUILTIN que é o pino 13 como saida
 }
 
 void loop()

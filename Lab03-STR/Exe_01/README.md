@@ -6,7 +6,13 @@ O exercício 01 é um exercício simples para obter uma resposta física do ardu
 
 ![](https://csg.tinkercad.com/things/6Xe5qFIot3z/t725.png?rev=1618689639508000000&s=&v=1&type=circuits)
 
-O link do exercício funcionando no [Tinkercad](https://www.tinkercad.com/things/6Xe5qFIot3z-exercicio-1).
+O link do exercício funcionando no [Tinkercad](https://www.tinkercad.com/things/6Xe5qFIot3z).
+
+Componentes utilizados: 
+
+- Arduino
+- LED
+- Resistor de 220 ohm
 
 
 ## Código
