@@ -17,7 +17,7 @@ Componentes utilizados:
 ## Código
 Código comentado do exercicio DIGITALREADSERIAL.
 
-````
+````ruby
 int pushButton = 2; //Atribuindo o um nome ao pin 2 do arduino
 void setup()
 {

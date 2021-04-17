@@ -20,7 +20,7 @@ Componentes utilizados:
 ## Código
 Código comentado do exercicio DIGITALREADSERIAL.
 
-````
+````ruby
 void setup()
 {
   //definindo os pins como saidas 

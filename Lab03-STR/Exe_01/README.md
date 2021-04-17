@@ -18,7 +18,7 @@ Componentes utilizados:
 ## Código
 Código comentado do exercicio Blink.
 
-````
+````ruby
 void setup()
 {
   pinMode(LED_BUILTIN, OUTPUT); //Inicia o pin LED_BUILTIN que é o pino 13 como saida
