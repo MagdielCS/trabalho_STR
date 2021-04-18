@@ -2,9 +2,11 @@
 
 Repositório do projeto da disciplina Sistema em Tempo Real e Embarcados 
 
-## Aluno
+## Alunos
 
+- João Vitor de Almeida Verçosa 
 - Magdiel Crisostomo de Sousa 21709009 magdiel.cs@sempreceub.com
+
 
 ## Laboratório - Sincronização e Comunicação (Lab03)
 ### -  Objetivos 
@@ -18,3 +20,15 @@ Repositório do projeto da disciplina Sistema em Tempo Real e Embarcados
 - [Exercício 01](https://github.com/MagdielCS/trabalho_STR/tree/main/Lab03-STR/Exe_01)
 - [Exercício 02](https://github.com/MagdielCS/trabalho_STR/tree/main/Lab03-STR/Exe_02)
 - [Exercicio 03](https://github.com/MagdielCS/trabalho_STR/tree/main/Lab03-STR/Exe_03)
+
+## Laboratório - Sensores e Atuadores (Lab04)
+### -  Objetivos 
+- Conhecer os componentes eletrônicos presentes no kit arduino
+- Testar a iteração com sensores e atuadores
+
+#### Acesso aos exercícios: 
+
+- [Exercício Parte 01]()
+- [Exercício Parte 02]()
+  
+[Voltar ao inicio](https://github.com/MagdielCS/trabalho_STR)
