@@ -65,4 +65,5 @@ void loop() {
 }
 ````
 [Parte 01](https://github.com/MagdielCS/trabalho_STR/tree/main/Lab04-STR/Parte_1)
+
 [Voltar ao inicio](https://github.com/MagdielCS/trabalho_STR)
