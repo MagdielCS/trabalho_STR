@@ -28,7 +28,5 @@ Repositório do projeto da disciplina Sistema em Tempo Real e Embarcados
 
 #### Acesso aos exercícios: 
 
-- [Exercício Parte 01]()
-- [Exercício Parte 02]()
-  
-[Voltar ao inicio](https://github.com/MagdielCS/trabalho_STR)
+- [Exercício Parte 01](https://github.com/MagdielCS/trabalho_STR/tree/main/Lab04-STR/Parte_1)
+- [Exercício Parte 02](https://github.com/MagdielCS/trabalho_STR/tree/main/Lab04-STR/Parte_2)

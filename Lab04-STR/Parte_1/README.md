@@ -51,5 +51,5 @@ void loop() {
 }
 ````
 
-[Parte 02]()
+[Parte 02](https://github.com/MagdielCS/trabalho_STR/tree/main/Lab04-STR/Parte_2)
 [Voltar ao inicio](https://github.com/MagdielCS/trabalho_STR)
