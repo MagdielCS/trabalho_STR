@@ -27,7 +27,7 @@ const int buzzerPin = 8; //Campainha
 const int ldrPin = A0; //Fotoresistor
 
 void setup () {
-  //Iniciando a comuni9cação serial a 9600 bits por segundo
+  //Iniciando a comunicação serial a 9600 bits por segundo
   Serial.begin(9600);
   //Definindo os pins
   pinMode(ledPin, OUTPUT); //Definido como saída
