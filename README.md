@@ -4,7 +4,7 @@ Repositório do projeto da disciplina Sistema em Tempo Real e Embarcados
 
 ## Alunos
 
-- João Vitor de Almeida Verçosa 
+- João Vitor de Almeida Verçosa 21709822 scorpionex@sempreceub.com
 - Magdiel Crisostomo de Sousa 21709009 magdiel.cs@sempreceub.com
 
 
