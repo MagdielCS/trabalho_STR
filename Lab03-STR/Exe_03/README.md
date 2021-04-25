@@ -120,3 +120,5 @@ void loop() {
 ## Demonstração
 
 Demonstração do código funcionando utilizando as threads em [vídeo](https://drive.google.com/file/d/1cb6HhL3fe78aggdcCpT3tlOTVpuzJPw8/view?usp=sharing)
+
+[Voltar ao inicio](https://github.com/MagdielCS/trabalho_STR)
