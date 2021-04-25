@@ -4,7 +4,7 @@ A segunda parte pede para adicionar um LED no projeto e pede uma saída informan
 
 ## Tinkercad
 
-![](https://csg.tinkercad.com/things/47HnBBpB26J/t725.png?rev=1618770255111000000&s=&v=1&type=circuits)
+![](https://csg.tinkercad.com/things/d8GCXuL0WGL/t725.png?rev=1619389251182000000&s=&v=1&type=circuits)
 
 O link do exercício funcionando no [Tinkercad](https://www.tinkercad.com/things/d8GCXuL0WGL-sensores-parte-2).
 

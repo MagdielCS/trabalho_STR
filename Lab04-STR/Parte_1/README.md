@@ -4,7 +4,7 @@ Esse exercício tem duas partes a primeira parte pede para utilizar um fotorresi
 
 ## Tinkercad
 
-![](https://csg.tinkercad.com/things/a4GCjRQXt7r/t725.png?rev=1618769523951000000&s=&v=1&type=circuits)
+![](https://csg.tinkercad.com/things/hTzZzHgRHSl/t725.png?rev=1619388617412000000&s=&v=1&type=circuits)
 
 O link do exercício funcionando no [Tinkercad](https://www.tinkercad.com/things/hTzZzHgRHSl-sensores-parte-1).
 
