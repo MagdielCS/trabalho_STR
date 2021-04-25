@@ -1,6 +1,6 @@
 # Exercício 03 - Semáforo 
 
-O exercício 03 é um exercício que simula um semáforo, o exercício pede que façamos o semáforo utilizando a biblioteca [NilRTOS](https://github.com/greiman/NilRTOS-Arduino), como utilizei o Tinkercad não utilizei a biblioteca fiz um semáforo utilizando o que o Tinkercad disponibiliza. 
+O exercício 03 é um exercício que demonstra semáforos, threads e como parar as threads, o exercício pede que utilizemos a biblioteca [NilRTOS](https://github.com/greiman/NilRTOS-Arduino), utilizamos o tinkercad para mostrar como faríamos o semáforo e utilizamos a biblioteca num arduino real. 
 
 ## Tinkercad
 
@@ -18,41 +18,105 @@ Componentes utilizados:
 
 
 ## Código
-Código comentado do exercicio DIGITALREADSERIAL.
+Código comentado do exercício SEMÁFOROS.
 
 ````ruby
-void setup()
-{
-  //definindo os pins como saidas 
-  pinMode(2, OUTPUT); //Semáforo pedestre vermelho
-  pinMode(3, OUTPUT); //Semáforo pedestre verde 
-  pinMode(9, OUTPUT); //Semáforo vermelho
-  pinMode(10, OUTPUT); //Semáforo amarelo
-  pinMode(11, OUTPUT); //Semáforo verde
+/*
+* Demosntração de thread, semaforos, and thread sleep.
+*/
+#include <NilRTOS.h>
+
+const uint8_t LED_PIN = 13; //Carro Verde
+const uint8_t LED_PIN2 = 12; //Carro Amarelo
+const uint8_t LED_PIN3 = 11; //Carro Vermelho
+const uint8_t LED_PIN4 = 10; //Pedestre Verde
+const uint8_t LED_PIN5 = 9; //Pedestre Vermelho
+// O semaforo é declarado com o valor inicial de zero.
+SEMAPHORE_DECL(sem, 0);
+//-----------------------------------------------------------------------------
+/*
+* Thread 1, abre o semaforo para carros e fecha o de pedestres aguarda 3 segundos 
+* desliga o sinal verde e acende o amarelo
+* quando ele é sinalizado pela thread 2.
+*/
+// Declara um stack with 128 bytes de forma global.
+NIL_WORKING_AREA(waThread1, 128);
+// Declara a função da thread 1.
+NIL_THREAD(Thread1, arg) {
+ while (TRUE) {
+
+ // Espera o sinal da thread 2.
+ nilSemWait(&sem);
+
+ digitalWrite(LED_PIN, HIGH);
+ digitalWrite(LED_PIN5, HIGH);
+ delay (3000);
+ digitalWrite(LED_PIN, LOW);
+ digitalWrite(LED_PIN2, HIGH);
+ delay (2000);
+ }
+}
+//-----------------------------------------------------------------------------
+/*
+* Thread 2, desliga o sinal amarelo fecha o semaforo dos carros 
+* liga o dos pedestres, sinaliza para a thread 1 executar sua função.
+*/
+// Declare a stack with 128 bytes beyond context switch and interrupt needs.
+NIL_WORKING_AREA(waThread2, 128);
+// Declarando a função para a thread 2.
+NIL_THREAD(Thread2, arg) {
+ pinMode(LED_PIN, OUTPUT);
+ pinMode(LED_PIN2, OUTPUT);
+ pinMode(LED_PIN3, OUTPUT);
+ pinMode(LED_PIN4, OUTPUT);
+ pinMode(LED_PIN5, OUTPUT);
+
+ while (TRUE) {
+  // Turn LED on.
+ digitalWrite(LED_PIN5, LOW);
+ digitalWrite(LED_PIN2, LOW);
+ digitalWrite(LED_PIN3, HIGH);
+ digitalWrite(LED_PIN4, HIGH);
+ delay (3000);
+ digitalWrite(LED_PIN3, LOW);
+ digitalWrite(LED_PIN4, LOW);
+ 
+
+ // Sleep for 100 millisegundos.
+ nilThdSleepMilliseconds(100);
+
+ // Sinaliza para thread 1 executar.
+ nilSemSignal(&sem);
+
+ }
 }
 
-void loop()
-{
-  //semáforo aberto 
-  digitalWrite(2, HIGH);//semáforo pedestre fechado
-  digitalWrite(11, HIGH);//semáforo aberto
-  delay(2000); //aguarda 2 segundos 
-  digitalWrite(11, LOW); //desliga luz semáforo
-  
-  //Luz de atenção
-  digitalWrite(10, HIGH);//acende a luz de atenção 
-  delay(1000);//aguarda 1 segundo
-  digitalWrite(2, LOW); //desliga luz pedestre
-  digitalWrite(10, LOW); //desliga luz de atenção
-  
-  //semáforo fechado
-  digitalWrite(3, HIGH); //semaforo fechado
-  digitalWrite(9, HIGH); //semaforo pedestre aberto
-  delay(2000); //aguarda 2 segundos
-  digitalWrite(3, LOW); //desliga luz pedestre
-  digitalWrite(9, LOW); //desliga luz semáforo
-  
+
+//-----------------------------------------------------------------------------
+/*
+* Threads static table, one entry per thread. A prioridade da thread é 
+* determinada pela sua posição na tabela as de maior prioridade sao declaradas antes.
+*
+* As threads iniciam com o argumento nulo. O nome da thread ser nulo
+* Para poupar memória.
+*/
+NIL_THREADS_TABLE_BEGIN()
+NIL_THREADS_TABLE_ENTRY("thread1", Thread1, NULL, waThread1, sizeof(waThread1))
+NIL_THREADS_TABLE_ENTRY("thread2", Thread2, NULL, waThread2, sizeof(waThread2))
+NIL_THREADS_TABLE_END()
+//-----------------------------------------------------------------------------
+void setup() {
+ // Inicia o Nil RTOS.
+ nilSysBegin();
+}
+//-----------------------------------------------------------------------------
+// Loop é uma thread ociosa. The idle thread must not invoke any
+// Ela nao pode invocar nada do kernel que mude o estado dela para não executavel.
+void loop() {
+ // Não Utilizada.
 }
 ````
 
-[Voltar ao inicio](https://github.com/MagdielCS/trabalho_STR)
+## Demonstração
+
+Demonstração do código funcionando utilizando as threads em [vídeo](https://drive.google.com/file/d/1cb6HhL3fe78aggdcCpT3tlOTVpuzJPw8/view?usp=sharing)
